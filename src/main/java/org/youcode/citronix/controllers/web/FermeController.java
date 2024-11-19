@@ -9,7 +9,7 @@ import org.youcode.citronix.entities.Ferme;
 import org.youcode.citronix.services.FermeService;
 
 @RestController
-@RequestMapping("/api/farmers")
+@RequestMapping("/api/farms")
 public class FermeController extends GenericControllerImpl<Ferme,Long, FermeRequestDTO, FermeResponseDTO> {
     public FermeController(FermeService service) {
         super(service);
