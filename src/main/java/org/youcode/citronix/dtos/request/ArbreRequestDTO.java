@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import org.youcode.citronix.common.validation.annotation.Exists;
 import org.youcode.citronix.entities.Arbre;
+import org.youcode.citronix.entities.Champ;
 import org.youcode.citronix.entities.Ferme;
 
 import java.time.LocalDate;
@@ -14,7 +15,7 @@ public record ArbreRequestDTO(
         LocalDate datePlantation,
 
         @NotNull
-        @Exists(entityClass = Arbre.class, message = "Arbre id does not exists")
+        @Exists(entityClass = Champ.class, message = "Champ id does not exists")
         Long champ
 ) {
 }
