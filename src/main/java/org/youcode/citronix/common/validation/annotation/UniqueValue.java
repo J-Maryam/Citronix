@@ -2,6 +2,7 @@ package org.youcode.citronix.common.validation.annotation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
+import org.youcode.citronix.common.validation.validator.UniqueValueValidator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
