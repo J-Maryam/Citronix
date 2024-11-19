@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.youcode.citronix.entities.enums.Saison;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,27 +17,20 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Recolte {
+public class Tree {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private Saison saison;
-
-    @NotNull
     @PastOrPresent
-    private LocalDate dateRecolte;
-
     @NotNull
-    private double quantiteTotale;
+    private LocalDate datePlantation;
 
     @ManyToOne
     @JoinColumn(name = "champ_id", nullable = false)
-    private Champ champ;
+    private Field champ;
 
-    @OneToMany(mappedBy = "recolte")
-    private List<DetailRecolte> detailRecoltes = new ArrayList<>();
-
+    @OneToMany(mappedBy = "arbre")
+    private List<HarvestDetail> detailRecoltes = new ArrayList<>();
 }

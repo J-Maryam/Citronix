@@ -10,33 +10,35 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Vente {
+public class Farm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @PastOrPresent
-    @NotNull
-    private LocalDate dateVente;
-
-    @NotNull
-    private double prixUnitaire;
-
-    @NotNull
-    private double quantite;
+    @NotBlank
+    @Column(unique = true)
+    private String name;
 
     @NotBlank
-    private String client;
+    private String location;
 
-    @ManyToOne
-    @JoinColumn(name = "recolte_id", nullable = false)
-    private Recolte recolte;
+    @NotNull
+    private double area;
 
+    @NotNull
+    @PastOrPresent
+    private LocalDate creationDate;
+
+    @OneToMany(mappedBy = "farm")
+    @NotNull
+    private List<Field> fields = new ArrayList<>();
 }

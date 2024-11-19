@@ -6,8 +6,8 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public record DetailRecoltId(
-        @Column(name = "arbre_id") Long arbreId,
-        @Column(name = "recolt_id") Long recolteId
+public record HarvestDetailId(
+        @Column(name = "tree_id") Long treeId,
+        @Column(name = "harvest_id") Long harvestId
 ) implements Serializable {
 }

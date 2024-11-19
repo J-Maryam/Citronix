@@ -6,8 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/controllers/GenericControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/controllers/GenericControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/controllers/web/FermeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/controllers/web/FermeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/ArbreRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/ArbreRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/ChampRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/ChampRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/DetailRecolteRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/DetailRecolteRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FermeRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FermeRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/RecolteRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/RecolteRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/VenteRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/VenteRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Arbre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Champ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/DetailRecolte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/HarvestDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Ferme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Farm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Recolte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Harvest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Vente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Vente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FermeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FermeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/FermeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/FermeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/FermeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/FermeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FermeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FermeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +42,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -61,7 +75,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.CitronixApplication .executor": "Run",
-    "git-widget-placeholder": "CIT-4-Gestion-des-Fermes",
+    "git-widget-placeholder": "CIT-65-refactor-code-cleanup",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/UML",
     "node.js.selected.package.tslint": "(autodetect)",

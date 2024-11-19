@@ -1,6 +1,7 @@
 package org.youcode.citronix.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
@@ -9,15 +10,13 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Arbre {
+public class Sale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +24,18 @@ public class Arbre {
 
     @PastOrPresent
     @NotNull
-    private LocalDate datePlantation;
+    private LocalDate saleDate;
+
+    @NotNull
+    private double unitPrice;
+
+    @NotNull
+    private double quantity;
+
+    @NotBlank
+    private String client;
 
     @ManyToOne
-    @JoinColumn(name = "champ_id", nullable = false)
-    private Champ champ;
-
-    @OneToMany(mappedBy = "arbre")
-    private List<DetailRecolte> detailRecoltes = new ArrayList<>();
+    @JoinColumn(name = "harvest_id", nullable = false)
+    private Harvest harvest;
 }

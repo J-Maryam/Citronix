@@ -6,28 +6,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.youcode.citronix.entities.embeddable.DetailRecoltId;
+import org.youcode.citronix.entities.embeddable.HarvestDetailId;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class DetailRecolte {
+public class HarvestDetail {
 
     @EmbeddedId
-    private DetailRecoltId id;
+    private HarvestDetailId id;
 
     @NotNull
-    private double quantite;
+    private double quantity;
 
     @ManyToOne
-    @MapsId("arbreId")
-    @JoinColumn(name = "arbre_id")
-    private Arbre arbre;
+    @MapsId("treeId")
+    @JoinColumn(name = "tree_id")
+    private Tree tree;
 
     @ManyToOne
-    @MapsId("recolteId")
-    @JoinColumn(name = "recolte_id")
-    private Recolte recolte;
+    @MapsId("harvestId")
+    @JoinColumn(name = "harvest_id")
+    private Harvest harvest;
 }

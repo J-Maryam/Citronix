@@ -15,23 +15,22 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Champ {
+public class Field {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private double superficie;
+    private double area;
 
     @ManyToOne
-    @JoinColumn(name = "ferme_id", nullable = false)
-    private Ferme ferme;
+    @JoinColumn(name = "farm_id", nullable = false)
+    private Farm farm;
 
-    @OneToMany(mappedBy = "champ")
-    private List<Arbre> arbres = new ArrayList<>();
+    @OneToMany(mappedBy = "field")
+    private List<Tree> trees = new ArrayList<>();
 
-    @OneToMany(mappedBy = "champ", cascade = CascadeType.ALL)
-    private List<Recolte> recoltes = new ArrayList<>();
-
+    @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
+    private List<Harvest> harvests = new ArrayList<>();
 }

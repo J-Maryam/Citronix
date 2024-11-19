@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import org.youcode.citronix.common.validation.annotation.UniqueValue;
-import org.youcode.citronix.entities.Ferme;
+import org.youcode.citronix.entities.Farm;
 
 import java.time.LocalDate;
 
@@ -13,7 +13,7 @@ public record FermeRequestDTO(
         String nom,
 
         @NotBlank
-        @UniqueValue(entityClass = Ferme.class, fieldName = "localisation", message = "Farmer localisation already exists")
+        @UniqueValue(entityClass = Farm.class, fieldName = "localisation", message = "Farmer localisation already exists")
         String localisation,
 
         @NotNull

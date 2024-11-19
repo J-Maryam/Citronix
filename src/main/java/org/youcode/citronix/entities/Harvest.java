@@ -1,13 +1,13 @@
 package org.youcode.citronix.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.youcode.citronix.entities.enums.Saison;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,27 +18,27 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Ferme {
+public class Harvest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Column(unique = true)
-    private String nom;
-
-    @NotBlank
-    private String localisation;
-
-    @NotNull
-    private double superficie;
+    @Enumerated(EnumType.STRING)
+    private Saison saison;
 
     @NotNull
     @PastOrPresent
-    private LocalDate dateCreation;
+    private LocalDate dateRecolte;
 
-    @OneToMany(mappedBy = "ferme")
     @NotNull
-    private List<Champ> champs = new ArrayList<>();
+    private double quantiteTotale;
+
+    @ManyToOne
+    @JoinColumn(name = "champ_id", nullable = false)
+    private Field champ;
+
+    @OneToMany(mappedBy = "recolte")
+    private List<HarvestDetail> detailRecoltes = new ArrayList<>();
+
 }
