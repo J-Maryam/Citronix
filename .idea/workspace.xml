@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/GenericMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
     "Spring Boot.CitronixApplication .executor": "Run",
     "git-widget-placeholder": "CIT-1-Architecture-Structure-Project",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/main/java/org/youcode/citronix/common",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -78,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731976661855</updated>
-      <workItem from="1731976664798" duration="1710000" />
+      <workItem from="1731976664798" duration="2010000" />
     </task>
     <servers />
   </component>
