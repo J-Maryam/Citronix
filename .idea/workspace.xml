@@ -53,6 +53,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marya\IdeaProjects\Citronix\src\main\java\org\youcode\citronix\common" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.youcode.citronix.common" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="CitronixApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
