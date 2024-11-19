@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/validation/annotation/UniqueValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/validation/annotation/UniqueValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/embeddable/DetailRecoltId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/embeddable/DetailRecoltId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FermeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FermeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +26,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -48,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.Citronix [clean].executor": "Run",
+    "Maven.Citronix [compile].executor": "Run",
     "Maven.Citronix [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",

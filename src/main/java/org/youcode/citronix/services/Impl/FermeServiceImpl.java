@@ -7,10 +7,15 @@ import org.youcode.citronix.common.services.GenericServiceImpl;
 import org.youcode.citronix.dtos.request.FermeRequestDTO;
 import org.youcode.citronix.dtos.response.FermeResponseDTO;
 import org.youcode.citronix.entities.Ferme;
+import org.youcode.citronix.mappers.FermeMapper;
+import org.youcode.citronix.repositories.FermeRepository;
 import org.youcode.citronix.services.FermeService;
 
 @Service
 @Transactional
 @Validated
 public class FermeServiceImpl extends GenericServiceImpl<Ferme, Long, FermeRequestDTO, FermeResponseDTO> implements FermeService {
+        public FermeServiceImpl(FermeRepository repository, FermeMapper mapper) {
+            super(repository, mapper);
+        }
 }
