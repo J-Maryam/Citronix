@@ -10,10 +10,10 @@ import java.time.LocalDate;
 
 public record FermeRequestDTO(
         @NotBlank
-        @UniqueValue(entityClass = Ferme.class, fieldName = "nom", message = "Farmer name already exists")
         String nom,
 
         @NotBlank
+        @UniqueValue(entityClass = Ferme.class, fieldName = "localisation", message = "Farmer localisation already exists")
         String localisation,
 
         @NotNull
