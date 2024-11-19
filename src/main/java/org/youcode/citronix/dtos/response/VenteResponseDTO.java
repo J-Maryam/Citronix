@@ -1,7 +1,6 @@
 package org.youcode.citronix.dtos.response;
 
-import org.youcode.citronix.dtos.embeddableDTO.EmbeddableRecolteResponseDTO;
-import org.youcode.citronix.entities.Recolte;
+import org.youcode.citronix.dtos.embeddableResponseDTO.EmbeddableRecolteResponseDTO;
 
 import java.time.LocalDate;
 

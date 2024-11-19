@@ -1,7 +1,7 @@
 package org.youcode.citronix.dtos.response;
 
-import org.youcode.citronix.dtos.embeddableDTO.EmbeddableChampResponseDTO;
-import org.youcode.citronix.dtos.embeddableDTO.EmbeddableDetailRecolteResponseDTO;
+import org.youcode.citronix.dtos.embeddableResponseDTO.EmbeddableChampResponseDTO;
+import org.youcode.citronix.dtos.embeddableResponseDTO.EmbeddableDetailRecolteResponseDTO;
 import org.youcode.citronix.entities.enums.Saison;
 
 import java.time.LocalDate;

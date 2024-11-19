@@ -1,6 +1,5 @@
-package org.youcode.citronix.dtos.embeddableDTO;
+package org.youcode.citronix.dtos.embeddableResponseDTO;
 
-import org.youcode.citronix.entities.Recolte;
 import java.time.LocalDate;
 
 public record EmbeddableVenteResponseDTO(
@@ -9,6 +8,6 @@ public record EmbeddableVenteResponseDTO(
         double prixUnitaire,
         double quantite,
         String client,
-        Recolte recolte
+        EmbeddableRecolteResponseDTO recolte
 ) {
 }

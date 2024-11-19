@@ -1,9 +1,5 @@
-package org.youcode.citronix.dtos.embeddableDTO;
-
-import org.youcode.citronix.entities.Champ;
-
+package org.youcode.citronix.dtos.embeddableResponseDTO;
 import java.time.LocalDate;
-import java.util.List;
 
 public record EmbeddableFermeResponseDTO(
         Long id,

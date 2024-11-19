@@ -1,11 +1,10 @@
-package org.youcode.citronix.dtos.embeddableDTO;
+package org.youcode.citronix.dtos.embeddableResponseDTO;
 
-import org.youcode.citronix.entities.Champ;
 import java.time.LocalDate;
 
 public record EmbeddableArbreResponseDTO(
         Long id,
         LocalDate datePlantation,
-        Champ champ
+        EmbeddableChampResponseDTO champ
 ) {
 }
