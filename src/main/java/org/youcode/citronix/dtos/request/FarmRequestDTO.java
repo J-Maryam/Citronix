@@ -8,20 +8,20 @@ import org.youcode.citronix.entities.Farm;
 
 import java.time.LocalDate;
 
-public record FermeRequestDTO(
+public record FarmRequestDTO(
         @NotBlank
-        String nom,
+        String name,
 
         @NotBlank
-        @UniqueValue(entityClass = Farm.class, fieldName = "localisation", message = "Farmer localisation already exists")
-        String localisation,
+        @UniqueValue(entityClass = Farm.class, fieldName = "localisation", message = "Farm localisation already exists")
+        String location,
 
         @NotNull
-        double superficie,
+        double area,
 
         @NotNull
         @PastOrPresent
-        LocalDate dateCreation
+        LocalDate creationDate
 
 ) {
 }

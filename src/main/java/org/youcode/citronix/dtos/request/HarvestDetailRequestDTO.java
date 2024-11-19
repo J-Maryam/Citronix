@@ -5,16 +5,16 @@ import org.youcode.citronix.common.validation.annotation.Exists;
 import org.youcode.citronix.entities.Tree;
 import org.youcode.citronix.entities.Harvest;
 
-public record DetailRecolteRequestDTO(
+public record HarvestDetailRequestDTO(
         @NotNull
-        double quantite,
+        double quantity,
 
         @NotNull
-        @Exists(entityClass = Tree.class, message = "Arbre id does not exists")
-        Long arbre,
+        @Exists(entityClass = Tree.class, message = "Tree ID does not exist")
+        Long tree,
 
         @NotNull
-        @Exists(entityClass = Harvest.class, message = "Recolte id does not exists")
-        Long recolte
+        @Exists(entityClass = Harvest.class, message = "Harvest ID does not exist")
+        Long harvest
 ) {
 }

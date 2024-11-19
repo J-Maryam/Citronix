@@ -4,12 +4,12 @@ import jakarta.validation.constraints.NotNull;
 import org.youcode.citronix.common.validation.annotation.Exists;
 import org.youcode.citronix.entities.Farm;
 
-public record ChampRequestDTO(
+public record FieldRequestDTO(
         @NotNull
-        double superficie,
+        double area,
 
         @NotNull
-        @Exists(entityClass = Farm.class, message = "Farm id does not exists")
-        Long ferme
+        @Exists(entityClass = Farm.class, message = "Farm ID does not exist")
+        Long farm
 ) {
 }

@@ -7,13 +7,13 @@ import org.youcode.citronix.entities.Field;
 
 import java.time.LocalDate;
 
-public record ArbreRequestDTO(
+public record TreeRequestDTO(
         @PastOrPresent
         @NotNull
-        LocalDate datePlantation,
+        LocalDate plantingDate,
 
         @NotNull
-        @Exists(entityClass = Field.class, message = "Champ id does not exists")
-        Long champ
+        @Exists(entityClass = Field.class, message = "Field ID does not exist")
+        Long field
 ) {
 }

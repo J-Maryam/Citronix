@@ -8,20 +8,20 @@ import org.youcode.citronix.entities.enums.Saison;
 
 import java.time.LocalDate;
 
-public record RecolteRequestDTO(
+public record HarvestRequestDTO(
 
         @NotNull
-        Saison saison,
+        Saison season,
 
         @NotNull
         @PastOrPresent
-        LocalDate dateRecolte,
+        LocalDate harvestDate,
 
         @NotNull
-        double quantiteTotale,
+        double totalQuantity,
 
         @NotNull
-        @Exists(entityClass = Field.class, message = "Champ id does not exists")
-        Long champ
+        @Exists(entityClass = Field.class, message = "Field ID does not exist")
+        Long field
 ) {
 }

@@ -8,22 +8,22 @@ import org.youcode.citronix.entities.Harvest;
 
 import java.time.LocalDate;
 
-public record VenteRequestDTO(
+public record SaleRequestDTO(
 
         @PastOrPresent
-        LocalDate dateVente,
+        LocalDate saleDate,
 
         @NotNull
-        double prixUnitaire,
+        double unitPrice,
 
         @NotNull
-        double quantite,
+        double quantity,
 
         @NotBlank
         String client,
 
         @NotNull
-        @Exists(entityClass = Harvest.class, message = "Recolte id does not exists")
-        Long recolte
+        @Exists(entityClass = Harvest.class, message = "Harvest ID does not exist")
+        Long harvest
 ) {
 }
