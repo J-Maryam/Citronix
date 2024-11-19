@@ -1,4 +1,4 @@
-package org.youcode.citronix.common.exception;
+package org.youcode.citronix.common.exceptions;
 
 public class BadRequestException extends RuntimeException {
     public BadRequestException(String message) {

@@ -1,4 +1,4 @@
-package org.youcode.citronix.common;
+package org.youcode.citronix.common.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
-import org.youcode.citronix.common.exception.EntityNotFoundException;
+import org.youcode.citronix.common.GenericMapper;
+import org.youcode.citronix.common.PagedResponse;
+import org.youcode.citronix.common.exceptions.EntityNotFoundException;
 
 import java.util.List;
 

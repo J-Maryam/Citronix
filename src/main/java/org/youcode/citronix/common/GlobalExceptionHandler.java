@@ -6,10 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.youcode.citronix.common.exception.BadRequestException;
-import org.youcode.citronix.common.exception.ConflictException;
-import org.youcode.citronix.common.exception.EntityCreationException;
-import org.youcode.citronix.common.exception.EntityNotFoundException;
+import org.youcode.citronix.common.exceptions.BadRequestException;
+import org.youcode.citronix.common.exceptions.ConflictException;
+import org.youcode.citronix.common.exceptions.EntityCreationException;
+import org.youcode.citronix.common.exceptions.EntityNotFoundException;
 
 import java.time.LocalDateTime;
 

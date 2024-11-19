@@ -1,4 +1,4 @@
-package org.youcode.citronix.common.exception;
+package org.youcode.citronix.common.exceptions;
 
 public class ConflictException extends RuntimeException {
     public ConflictException(String message) {

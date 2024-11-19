@@ -1,9 +1,11 @@
-package org.youcode.citronix.common;
+package org.youcode.citronix.common.controllers;
 
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.youcode.citronix.common.ApiResponse;
+import org.youcode.citronix.common.PagedResponse;
 
 public interface GenericController<ID, RequestDto, ResponseDto> {
     @GetMapping
