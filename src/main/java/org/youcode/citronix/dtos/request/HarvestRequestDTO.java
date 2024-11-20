@@ -4,14 +4,14 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import org.youcode.citronix.common.validation.annotation.Exists;
 import org.youcode.citronix.entities.Field;
-import org.youcode.citronix.entities.enums.Saison;
+import org.youcode.citronix.entities.enums.Season;
 
 import java.time.LocalDate;
 
 public record HarvestRequestDTO(
 
         @NotNull
-        Saison season,
+        Season season,
 
         @NotNull
         @PastOrPresent

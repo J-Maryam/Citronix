@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.youcode.citronix.entities.enums.Saison;
+import org.youcode.citronix.entities.enums.Season;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class Harvest {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private Saison saison;
+    private Season saison;
 
     @NotNull
     @PastOrPresent
