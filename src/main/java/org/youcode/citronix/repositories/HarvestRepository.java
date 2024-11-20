@@ -6,4 +6,6 @@ import org.youcode.citronix.entities.Harvest;
 
 @Repository
 public interface HarvestRepository extends JpaRepository<Harvest, Long> {
+    boolean existsByFieldAndSeason(Long fieldId, String season);
+    boolean existsByTreeAndSeason(Long treeId, String season);
 }
