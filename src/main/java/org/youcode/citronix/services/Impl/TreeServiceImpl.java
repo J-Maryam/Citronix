@@ -14,6 +14,9 @@ import org.youcode.citronix.repositories.FieldRepository;
 import org.youcode.citronix.repositories.TreeRepository;
 import org.youcode.citronix.services.TreeService;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 @Service
 @Transactional
 @Validated
@@ -32,9 +35,10 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
                 .orElseThrow(() -> new EntityNotFoundException("Field with Id " + requestDto.fieldId() + " not found"));
 
         validateDensity(field);
-        Tree entity = mapper.toEntity(requestDto);
-        entity.setField(field);
-        Tree savedEntity = repository.save(entity);
+        Tree tree = mapper.toEntity(requestDto);
+        tree.setField(field);
+        int age = calculateAge(tree);
+        Tree savedEntity = repository.save(tree);
         return mapper.toDto(savedEntity);
     }
 
@@ -47,5 +51,13 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         if (treeCount >= maxTreesAllowed) {
             throw new IllegalArgumentException("Density limit exceeded: A field cannot have more than " + maxTreesAllowed + " trees.");
         }
+    }
+
+    private int calculateAge(Tree tree) {
+        if (tree.getPlantationDate() != null) {
+            Period period = Period.between(tree.getPlantationDate(), LocalDate.now());
+            return period.getYears();
+        }
+        return 0;
     }
 }
