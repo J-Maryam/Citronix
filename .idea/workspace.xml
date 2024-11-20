@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FieldMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/controllers/web/FieldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FieldServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FieldServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +77,11 @@
       <recent name="org.youcode.citronix.entities" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.youcode.citronix.controllers.web" />
+      <recent name="org.youcode.citronix.services.Impl" />
+      <recent name="org.youcode.citronix.services" />
+      <recent name="org.youcode.citronix.repositories" />
       <recent name="org.youcode.citronix.mappers" />
-      <recent name="org.youcode.citronix.common.validation.annotation" />
-      <recent name="org.youcode.citronix.common.validation.validator" />
-      <recent name="org.youcode.citronix.dtos.response" />
-      <recent name="org.youcode.citronix.dtos.embeddableDTO" />
     </key>
   </component>
   <component name="RunManager">
