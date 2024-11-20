@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/controllers/web/FieldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FieldRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FieldRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FieldServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FieldServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
         <option value="Record" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -55,6 +56,7 @@
     "Maven.Citronix [install].executor": "Run",
     "Maven.Citronix [package].executor": "Run",
     "Maven.Citronix [validate].executor": "Run",
+    "Maven.Citronix [verify].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -64,6 +66,8 @@
     "git-widget-placeholder": "CIT-5-gestion-des-champs",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/UML",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -85,19 +89,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Citronix" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Citronix" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CitronixApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Citronix" />
@@ -124,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731976661855</updated>
       <workItem from="1731976664798" duration="2851000" />
+      <workItem from="1732066365125" duration="2877000" />
     </task>
     <servers />
   </component>

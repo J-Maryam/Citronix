@@ -10,6 +10,6 @@ public record FieldRequestDTO(
 
         @NotNull
         @Exists(entityClass = Farm.class, message = "Farm ID does not exist")
-        Long farm
+        Long farmId
 ) {
 }
