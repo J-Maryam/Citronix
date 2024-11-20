@@ -41,8 +41,11 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
     private void validateDensity(Field field) {
         long treeCount = treeRepository.countByFieldId(field.getId());
 
-        if (treeCount >= 100) {
-            throw new IllegalArgumentException("Density limit exceeded: A field cannot have more than 100 trees per hectare.");
+        double densityLimit = 100.0;
+        double maxTreesAllowed = densityLimit * field.getArea();
+
+        if (treeCount >= maxTreesAllowed) {
+            throw new IllegalArgumentException("Density limit exceeded: A field cannot have more than " + maxTreesAllowed + " trees.");
         }
     }
 }
