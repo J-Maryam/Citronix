@@ -29,7 +29,7 @@ public class FieldServiceImpl extends GenericServiceImpl<Field, Long, FieldReque
         Farm existingFarm = farmRepository.findById(requestDto.farmId())
                 .orElseThrow(() -> new EntityNotFoundException("Farm with Id " + requestDto.farmId() + " not found"));
 
-        validateFieldArea(existingFarm, requestDto.area());
+        validateFieldArea(existingFarm, requestDto.area(), null);
         Field entity = mapper.toEntity(requestDto);
         entity.setFarm(existingFarm);
         Field savedEntity = repository.save(entity);
@@ -37,15 +37,36 @@ public class FieldServiceImpl extends GenericServiceImpl<Field, Long, FieldReque
         return mapper.toDto(savedEntity);
     }
 
-    private void validateFieldArea(Farm farm, double fieldArea) {
+    @Override
+    public FieldResponseDTO update(Long id, FieldRequestDTO requestDto) {
+        Field existingField = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Field with Id " + id + " not found"));
+
+        Farm farm = farmRepository.findById(requestDto.farmId())
+                .orElseThrow(() -> new EntityNotFoundException("Farm with Id " + requestDto.farmId() + " not found"));
+
+        validateFieldArea(farm, requestDto.area(), existingField);
+        existingField.setArea(requestDto.area());
+        if (!existingField.getFarm().getId().equals(farm.getId())) {
+            existingField.setFarm(farm);
+        }
+
+        Field updatedField = repository.save(existingField);
+        return mapper.toDto(updatedField);
+    }
+
+    private void validateFieldArea(Farm farm, double newFieldArea, Field existingField) {
         double totalFieldArea = farm.getFields().stream()
+                .filter(field -> existingField == null || !field.getId().equals(existingField.getId())) // Exclure le champ actuel s'il existe
                 .mapToDouble(Field::getArea)
                 .sum();
-        double newTotalArea = totalFieldArea + fieldArea;
 
-        if (newTotalArea >= farm.getArea()) {
+        double adjustedTotalArea = totalFieldArea + newFieldArea;
+
+        if (adjustedTotalArea >= farm.getArea()) {
             throw new IllegalArgumentException("The total area of fields exceeds the farm's area. Maximum allowed: "
-                    + farm.getArea() + " hectares, current total: " + newTotalArea + " hectares.");
+                    + farm.getArea() + " hectares, current total: " + adjustedTotalArea + " hectares.");
         }
     }
+
 }
