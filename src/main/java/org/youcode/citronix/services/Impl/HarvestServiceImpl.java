@@ -41,7 +41,7 @@ public class HarvestServiceImpl extends GenericServiceImpl<Harvest, Long, Harves
         Field field = fieldRepository.findById(requestDto.fieldId())
                 .orElseThrow(() -> new EntityNotFoundException("Field with Id " + requestDto.fieldId() + " not found"));
 
-        validateSingleHarvestPerSeason(field, requestDto.harvestDate());
+        validateSingleHarvestPerSeason(field, requestDto.harvestDate(), null);
         validateTreesForSeason(field, requestDto.harvestDate());
 
         Harvest harvest = mapper.toEntity(requestDto);
@@ -52,11 +52,31 @@ public class HarvestServiceImpl extends GenericServiceImpl<Harvest, Long, Harves
         return mapper.toDto(savedHarvest);
     }
 
-    private void validateSingleHarvestPerSeason(Field field, LocalDate harvestDate) {
-        String currentSeason = getSeason(harvestDate);
-        boolean exists = harvestRepository.existsByFieldAndSeason(field.getId(), currentSeason);
+    @Override
+    public HarvestResponseDTO update(Long id, HarvestRequestDTO requestDto) {
+        Harvest existingHarvest = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Harvest with Id " + id + " not found"));
 
-        if (exists) {
+        Field field = fieldRepository.findById(requestDto.fieldId())
+                .orElseThrow(() -> new EntityNotFoundException("Field with Id " + requestDto.fieldId() + " not found"));
+
+        validateSingleHarvestPerSeason(field, requestDto.harvestDate(), id);
+        validateTreesForSeason(field, requestDto.harvestDate());
+
+        existingHarvest.setHarvestDate(requestDto.harvestDate());
+        existingHarvest.setTotalQuantity(requestDto.totalQuantity());
+        existingHarvest.setField(field);
+
+        Harvest updatedHarvest = repository.save(existingHarvest);
+
+        return mapper.toDto(updatedHarvest);
+    }
+
+    private void validateSingleHarvestPerSeason(Field field, LocalDate harvestDate, Long currentHarvestId) {
+        String currentSeason = getSeason(harvestDate);
+        Harvest existingHarvest = harvestRepository.existsByFieldAndSeason(field.getId(), currentSeason);
+
+        if (existingHarvest != null && (currentHarvestId == null || !existingHarvest.getId().equals(currentHarvestId))) {
             throw new IllegalArgumentException("Field already has a harvest for the season: " + currentSeason);
         }
     }

@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/HarvestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/HarvestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/HarvestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/TreeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/TreeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
