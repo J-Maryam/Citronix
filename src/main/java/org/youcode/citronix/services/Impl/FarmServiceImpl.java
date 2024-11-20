@@ -3,6 +3,7 @@ package org.youcode.citronix.services.Impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
+import org.youcode.citronix.common.exceptions.EntityNotFoundException;
 import org.youcode.citronix.common.services.GenericServiceImpl;
 import org.youcode.citronix.dtos.request.FarmRequestDTO;
 import org.youcode.citronix.dtos.response.FarmResponseDTO;
@@ -19,26 +20,26 @@ public class FarmServiceImpl extends GenericServiceImpl<Farm, Long, FarmRequestD
             super(repository, mapper);
         }
 
-//    @Override
-//    public FermeResponseDTO update(Long id, FermeRequestDTO requestDto) {
-//        Farm existingFerme = repository.findById(id)
-//                .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
-//
-//
-//        if (requestDto.nom() != null) {
-//            existingFerme.setNom(requestDto.nom());
-//        }
-//        if (requestDto.localisation() != null) {
-//            existingFerme.setLocalisation(requestDto.localisation());
-//        }
-//        if (requestDto.superficie() != 0) {
-//            existingFerme.setSuperficie(requestDto.superficie());
-//        }
-//        if (requestDto.dateCreation() != null) {
-//            existingFerme.setDateCreation(requestDto.dateCreation());
-//        }
-//
-//        Farm updatedEntity = repository.save(existingFerme);
-//        return mapper.toDto(updatedEntity);
-//    }
+    @Override
+    public FarmResponseDTO update(Long id, FarmRequestDTO requestDto) {
+        Farm existingFerme = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
+
+
+        if (requestDto.name() != null) {
+            existingFerme.setName(requestDto.name());
+        }
+        if (requestDto.location() != null) {
+            existingFerme.setLocation(requestDto.location());
+        }
+        if (requestDto.area() != 0) {
+            existingFerme.setArea(requestDto.area());
+        }
+        if (requestDto.creationDate() != null) {
+            existingFerme.setCreationDate(requestDto.creationDate());
+        }
+
+        Farm updatedEntity = repository.save(existingFerme);
+        return mapper.toDto(updatedEntity);
+    }
 }
