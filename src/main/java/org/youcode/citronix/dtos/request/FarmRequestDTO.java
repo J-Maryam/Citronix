@@ -13,7 +13,7 @@ public record FarmRequestDTO(
         String name,
 
         @NotBlank
-        @UniqueValue(entityClass = Farm.class, fieldName = "localisation", message = "Farm localisation already exists")
+        @UniqueValue(entityClass = Farm.class, fieldName = "location", message = "Farm localisation already exists")
         String location,
 
         @NotNull

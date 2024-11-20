@@ -25,12 +25,12 @@ public class Tree {
 
     @PastOrPresent
     @NotNull
-    private LocalDate datePlantation;
+    private LocalDate plantationDate;
 
     @ManyToOne
-    @JoinColumn(name = "champ_id", nullable = false)
-    private Field champ;
+    @JoinColumn(name = "field_id", nullable = false)
+    private Field field;
 
-    @OneToMany(mappedBy = "arbre")
-    private List<HarvestDetail> detailRecoltes = new ArrayList<>();
+    @OneToMany(mappedBy = "tree")
+    private List<HarvestDetail> harvestDetails = new ArrayList<>();
 }

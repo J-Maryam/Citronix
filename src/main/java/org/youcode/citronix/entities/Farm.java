@@ -25,10 +25,10 @@ public class Farm {
     private Long id;
 
     @NotBlank
-    @Column(unique = true)
     private String name;
 
     @NotBlank
+    @Column(unique = true)
     private String location;
 
     @NotNull

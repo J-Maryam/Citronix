@@ -25,20 +25,19 @@ public class Harvest {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private Season saison;
+    private Season season;
 
     @NotNull
     @PastOrPresent
-    private LocalDate dateRecolte;
+    private LocalDate harvestDate;
 
     @NotNull
-    private double quantiteTotale;
+    private double totalQuantity;
 
     @ManyToOne
-    @JoinColumn(name = "champ_id", nullable = false)
-    private Field champ;
+    @JoinColumn(name = "field_id", nullable = false)
+    private Field field;
 
-    @OneToMany(mappedBy = "recolte")
-    private List<HarvestDetail> detailRecoltes = new ArrayList<>();
-
+    @OneToMany(mappedBy = "harvest")
+    private List<HarvestDetail> harvestDetails = new ArrayList<>();
 }
