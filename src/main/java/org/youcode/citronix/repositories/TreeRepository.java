@@ -6,4 +6,5 @@ import org.youcode.citronix.entities.Tree;
 
 @Repository
 public interface TreeRepository extends JpaRepository<Tree, Long> {
+    long countByFieldId(Long fieldId);
 }
