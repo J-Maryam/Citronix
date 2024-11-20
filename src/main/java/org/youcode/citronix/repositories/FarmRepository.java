@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import org.youcode.citronix.entities.Farm;
 
 @Repository
-public interface FermeRepository extends JpaRepository<Farm, Long> {
+public interface FarmRepository extends JpaRepository<Farm, Long> {
 }

@@ -7,5 +7,5 @@ import org.youcode.citronix.dtos.response.FarmResponseDTO;
 import org.youcode.citronix.entities.Farm;
 
 @Mapper(componentModel = "spring")
-public interface FermeMapper extends GenericMapper<Farm, FarmRequestDTO, FarmResponseDTO> {
+public interface FarmMapper extends GenericMapper<Farm, FarmRequestDTO, FarmResponseDTO> {
 }

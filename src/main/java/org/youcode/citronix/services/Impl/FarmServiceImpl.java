@@ -7,15 +7,15 @@ import org.youcode.citronix.common.services.GenericServiceImpl;
 import org.youcode.citronix.dtos.request.FarmRequestDTO;
 import org.youcode.citronix.dtos.response.FarmResponseDTO;
 import org.youcode.citronix.entities.Farm;
-import org.youcode.citronix.mappers.FermeMapper;
-import org.youcode.citronix.repositories.FermeRepository;
-import org.youcode.citronix.services.FermeService;
+import org.youcode.citronix.mappers.FarmMapper;
+import org.youcode.citronix.repositories.FarmRepository;
+import org.youcode.citronix.services.FarmService;
 
 @Service
 @Transactional
 @Validated
-public class FermeServiceImpl extends GenericServiceImpl<Farm, Long, FarmRequestDTO, FarmResponseDTO> implements FermeService {
-        public FermeServiceImpl(FermeRepository repository, FermeMapper mapper) {
+public class FarmServiceImpl extends GenericServiceImpl<Farm, Long, FarmRequestDTO, FarmResponseDTO> implements FarmService {
+        public FarmServiceImpl(FarmRepository repository, FarmMapper mapper) {
             super(repository, mapper);
         }
 

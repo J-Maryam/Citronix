@@ -5,5 +5,5 @@ import org.youcode.citronix.dtos.request.FarmRequestDTO;
 import org.youcode.citronix.dtos.response.FarmResponseDTO;
 import org.youcode.citronix.entities.Farm;
 
-public interface FermeService extends GenericService<Farm, Long, FarmRequestDTO, FarmResponseDTO> {
+public interface FarmService extends GenericService<Farm, Long, FarmRequestDTO, FarmResponseDTO> {
 }
