@@ -49,6 +49,27 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         return mapper.toDto(savedEntity);
     }
 
+    @Override
+    public TreeResponseDTO update(Long id, TreeRequestDTO requestDto) {
+        Tree existingTree = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Tree with Id " + id + " not found"));
+
+        Field field = fieldRepository.findById(requestDto.fieldId())
+                .orElseThrow(() -> new EntityNotFoundException("Field with Id " + requestDto.fieldId() + " not found"));
+
+        validateDensity(field);
+        validatePlantingPeriod(requestDto.plantingDate());
+
+        existingTree.setPlantingDate(requestDto.plantingDate());
+        existingTree.setField(field);
+
+        int age = calculateAge(existingTree);
+        validateTreeLifeSpan(age);
+
+        Tree updatedTree = repository.save(existingTree);
+        return mapper.toDto(updatedTree);
+    }
+
     private void validateDensity(Field field) {
         long treeCount = treeRepository.countByFieldId(field.getId());
 
