@@ -56,6 +56,19 @@ public class FieldServiceImpl extends GenericServiceImpl<Field, Long, FieldReque
     }
 
     private void validateFieldArea(Farm farm, double newFieldArea, Field existingField) {
+        if (newFieldArea < 0.1) {
+            throw new IllegalArgumentException("Field area must be at least 0.1 hectare.");
+        }
+
+        if (newFieldArea > farm.getArea() / 2) {
+            throw new IllegalArgumentException("Field area cannot exceed 50% of the total farm area.");
+        }
+
+        long fieldCount = farm.getFields().stream().count();
+        if (fieldCount >= 10) {
+            throw new IllegalArgumentException("A farm cannot have more than 10 fields.");
+        }
+
         double totalFieldArea = farm.getFields().stream()
                 .filter(field -> existingField == null || !field.getId().equals(existingField.getId())) // Exclure le champ actuel s'il existe
                 .mapToDouble(Field::getArea)
