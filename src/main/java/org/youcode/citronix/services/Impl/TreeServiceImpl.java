@@ -45,6 +45,7 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         validateTreeLifeSpan(age);
 
         Tree savedEntity = repository.save(tree);
+
         return mapper.toDto(savedEntity);
     }
 
@@ -67,8 +68,8 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
     }
 
     private int calculateAge(Tree tree) {
-        if (tree.getPlantationDate() != null) {
-            Period period = Period.between(tree.getPlantationDate(), LocalDate.now());
+        if (tree.getPlantingDate() != null) {
+            Period period = Period.between(tree.getPlantingDate(), LocalDate.now());
             return period.getYears();
         }
         return 0;

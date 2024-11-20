@@ -25,7 +25,7 @@ public class Tree {
 
     @PastOrPresent
     @NotNull
-    private LocalDate plantationDate;
+    private LocalDate plantingDate;
 
     @ManyToOne
     @JoinColumn(name = "field_id", nullable = false)
