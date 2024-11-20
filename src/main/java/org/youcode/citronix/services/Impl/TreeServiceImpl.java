@@ -15,6 +15,7 @@ import org.youcode.citronix.repositories.TreeRepository;
 import org.youcode.citronix.services.TreeService;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.Period;
 
 @Service
@@ -37,8 +38,13 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         validateDensity(field);
         Tree tree = mapper.toEntity(requestDto);
         tree.setField(field);
+
         int age = calculateAge(tree);
+        validateTreeLifeSpan(age);
+
         Tree savedEntity = repository.save(tree);
+        double productivity = calculateProductivity(age);
+
         return mapper.toDto(savedEntity);
     }
 
@@ -59,5 +65,23 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
             return period.getYears();
         }
         return 0;
+    }
+
+    private double calculateProductivity(int age) {
+        if (age < 3) {
+            return 2.5;
+        } else if (age > 3 && age <= 10) {
+            return 12;
+        } else if (age > 10) {
+            return 20;
+        } else {
+            return 0.0;
+        }
+    }
+
+    private void validateTreeLifeSpan(int age) {
+        if (age > 20) {
+            throw new IllegalArgumentException("Tree is too old to be productive (age > 20 years).");
+        }
     }
 }
