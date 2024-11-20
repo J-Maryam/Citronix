@@ -65,7 +65,7 @@ public class FieldServiceImpl extends GenericServiceImpl<Field, Long, FieldReque
         }
 
         long fieldCount = farm.getFields().stream().count();
-        if (fieldCount >= 10) {
+        if (fieldCount >= 10 && (existingField == null || !farm.getFields().contains(existingField))) {
             throw new IllegalArgumentException("A farm cannot have more than 10 fields.");
         }
 
