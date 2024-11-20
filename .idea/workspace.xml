@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FarmRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/FarmRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Farm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Farm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Harvest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Harvest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/entities/Tree.java" afterDir="false" />
-    </list>
+    <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +58,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.CitronixApplication .executor": "Run",
-    "git-widget-placeholder": "CIT-65-refactor-code-cleanup",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/UML",
     "node.js.selected.package.tslint": "(autodetect)",
