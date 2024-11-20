@@ -36,6 +36,8 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
                 .orElseThrow(() -> new EntityNotFoundException("Field with Id " + requestDto.fieldId() + " not found"));
 
         validateDensity(field);
+        validatePlantingPeriod(requestDto.plantingDate());
+
         Tree tree = mapper.toEntity(requestDto);
         tree.setField(field);
 
@@ -43,8 +45,6 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         validateTreeLifeSpan(age);
 
         Tree savedEntity = repository.save(tree);
-        double productivity = calculateProductivity(age);
-
         return mapper.toDto(savedEntity);
     }
 
@@ -56,6 +56,13 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
 
         if (treeCount >= maxTreesAllowed) {
             throw new IllegalArgumentException("Density limit exceeded: A field cannot have more than " + maxTreesAllowed + " trees.");
+        }
+    }
+
+    private void validatePlantingPeriod(LocalDate plantingDate) {
+        Month month = plantingDate.getMonth();
+        if (month != Month.MARCH && month != Month.APRIL && month != Month.MAY) {
+            throw new IllegalArgumentException("Trees can only be planted between March and May.");
         }
     }
 
