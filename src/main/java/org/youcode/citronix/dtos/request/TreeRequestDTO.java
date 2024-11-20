@@ -14,6 +14,6 @@ public record TreeRequestDTO(
 
         @NotNull
         @Exists(entityClass = Field.class, message = "Field ID does not exist")
-        Long field
+        Long fieldId
 ) {
 }
