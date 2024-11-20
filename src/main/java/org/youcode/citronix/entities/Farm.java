@@ -38,7 +38,7 @@ public class Farm {
     @PastOrPresent
     private LocalDate creationDate;
 
-    @OneToMany(mappedBy = "farm")
+    @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL)
     @NotNull
     private List<Field> fields = new ArrayList<>();
 }
