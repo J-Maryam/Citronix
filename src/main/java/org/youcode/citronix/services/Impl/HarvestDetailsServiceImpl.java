@@ -17,6 +17,9 @@ import org.youcode.citronix.repositories.HarvestRepository;
 import org.youcode.citronix.repositories.TreeRepository;
 import org.youcode.citronix.services.HarvestDetailsService;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 @Service
 @Transactional
 @Validated
@@ -41,10 +44,8 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
         Tree tree = treeRepository.findById(requestDto.treeId())
                 .orElseThrow(() -> new EntityNotFoundException("Tree with Id " + requestDto.treeId() + " not found"));
 
-        boolean exists = harvestDetailsRepository.existsByTreeAndHarvestSeason(tree, harvest.getSeason());
-        if (exists) {
-            throw new IllegalArgumentException("The tree has already been harvested for this season.");
-        }
+        Month seasonMonth = harvest.getHarvestDate().getMonth();
+        validateTreesForSeason(tree, seasonMonth);
 
         HarvestDetail harvestDetail = mapper.toEntity(requestDto);
         harvestDetail.setHarvest(harvest);
@@ -52,5 +53,13 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
 
         HarvestDetail savedEntity = repository.save(harvestDetail);
         return mapper.toDto(savedEntity);
+    }
+
+    private void validateTreesForSeason(Tree tree, Month seasonMonth) {
+        boolean exists = harvestDetailsRepository.existsByTreeAndHarvestSeason(tree, seasonMonth);
+
+        if (exists) {
+            throw new IllegalArgumentException("The tree has already been harvested for this season.");
+        }
     }
 }
