@@ -11,10 +11,10 @@ public record HarvestDetailRequestDTO(
 
         @NotNull
         @Exists(entityClass = Tree.class, message = "Tree ID does not exist")
-        Long tree,
+        Long treeId,
 
         @NotNull
         @Exists(entityClass = Harvest.class, message = "Harvest ID does not exist")
-        Long harvest
+        Long harvestId
 ) {
 }
