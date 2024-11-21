@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 public record HarvestRequestDTO(
 
-        @NotNull
         Season season,
 
         @NotNull

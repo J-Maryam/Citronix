@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/HarvestRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/dtos/request/HarvestRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.CitronixApplication .executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "CIT-7-gestion-des-recoltes",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/UML",
     "node.js.detected.package.eslint": "true",

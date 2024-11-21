@@ -9,10 +9,14 @@ import org.youcode.citronix.dtos.request.HarvestRequestDTO;
 import org.youcode.citronix.dtos.response.HarvestResponseDTO;
 import org.youcode.citronix.entities.Field;
 import org.youcode.citronix.entities.Harvest;
+import org.youcode.citronix.entities.enums.Season;
 import org.youcode.citronix.mappers.HarvestMapper;
 import org.youcode.citronix.repositories.FieldRepository;
 import org.youcode.citronix.repositories.HarvestRepository;
 import org.youcode.citronix.services.HarvestService;
+
+import java.time.LocalDate;
+import java.time.Month;
 
 @Service
 @Transactional
@@ -34,6 +38,9 @@ public class HarvestServiceImpl extends GenericServiceImpl<Harvest, Long, Harves
         Harvest harvest = mapper.toEntity(requestDto);
         harvest.setField(field);
 
+        Season season = getSeason(requestDto.harvestDate());
+        harvest.setSeason(season);
+
         Harvest savedHarvest = repository.save(harvest);
 
         return mapper.toDto(savedHarvest);
@@ -51,9 +58,24 @@ public class HarvestServiceImpl extends GenericServiceImpl<Harvest, Long, Harves
         existingHarvest.setTotalQuantity(requestDto.totalQuantity());
         existingHarvest.setField(field);
 
+        Season season = getSeason(requestDto.harvestDate());
+        existingHarvest.setSeason(season);
+
         Harvest updatedHarvest = repository.save(existingHarvest);
 
         return mapper.toDto(updatedHarvest);
     }
 
+    private Season getSeason(LocalDate date) {
+        Month month = date.getMonth();
+        if (month == Month.DECEMBER || month == Month.JANUARY || month == Month.FEBRUARY) {
+            return Season.WINTER;
+        } else if (month == Month.MARCH || month == Month.APRIL || month == Month.MAY) {
+            return Season.SPRING;
+        } else if (month == Month.JUNE || month == Month.JULY || month == Month.AUGUST) {
+            return Season.SUMMER;
+        } else {
+            return Season.AUTUMN;
+        }
+    }
 }
