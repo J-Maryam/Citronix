@@ -18,7 +18,7 @@ import org.youcode.citronix.repositories.TreeRepository;
 import org.youcode.citronix.services.HarvestDetailsService;
 
 import java.time.LocalDate;
-import java.time.Month;
+import java.time.Period;
 
 @Service
 @Transactional
@@ -44,22 +44,68 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
         Tree tree = treeRepository.findById(requestDto.treeId())
                 .orElseThrow(() -> new EntityNotFoundException("Tree with Id " + requestDto.treeId() + " not found"));
 
-        Month seasonMonth = harvest.getHarvestDate().getMonth();
-        validateTreesForSeason(tree, seasonMonth);
+        if (!tree.getField().getId().equals(harvest.getField().getId())) {
+            throw new IllegalArgumentException(" Tree does not belong to the same field as the harvest");
+        }
+
+        boolean alreadyHarvested = harvestDetailsRepository.existsByTreeAndHarvest_Season(
+                tree,
+                harvest.getSeason()
+        );
+
+        if (alreadyHarvested) {
+            throw new IllegalArgumentException(" The tree has already been harvested for this season.");
+        }
+
+        validateHarvestedQuantity(tree, requestDto.quantity());
+        HarvestDetailId harvestDetailId = new HarvestDetailId(requestDto.treeId(), requestDto.harvestId());
 
         HarvestDetail harvestDetail = mapper.toEntity(requestDto);
+        harvestDetail.setId(harvestDetailId);
         harvestDetail.setHarvest(harvest);
         harvestDetail.setTree(tree);
+        harvestDetail.setQuantity(requestDto.quantity());
+
+        updateHarvestTotalQuantity(harvest, requestDto.quantity());
 
         HarvestDetail savedEntity = repository.save(harvestDetail);
         return mapper.toDto(savedEntity);
     }
 
-    private void validateTreesForSeason(Tree tree, Month seasonMonth) {
-        boolean exists = harvestDetailsRepository.existsByTreeAndHarvestSeason(tree, seasonMonth);
+    private void validateHarvestedQuantity(Tree tree, double harvestedQuantity) {
+        int treeAge = calculateTreeAge(tree);
+        double expectedProductivity = calculateExpectedProductivity(treeAge);
 
-        if (exists) {
-            throw new IllegalArgumentException("The tree has already been harvested for this season.");
+        double maxAllowedQuantity = expectedProductivity * 1.2;
+
+        if (harvestedQuantity > maxAllowedQuantity) {
+            throw new IllegalArgumentException(
+                    String.format("Harvested quantity (%.2f kg) exceeds maximum allowed quantity (%.2f kg) for tree age %d years",
+                            harvestedQuantity, maxAllowedQuantity, treeAge)
+            );
         }
     }
+
+    private int calculateTreeAge(Tree tree) {
+        return Period.between(tree.getPlantingDate(), LocalDate.now()).getYears();
+    }
+
+    private double calculateExpectedProductivity(int age) {
+        if (age < 3) {
+            return 2.5;
+        } else if (age <= 10) {
+            return 12.0;
+        } else if (age <= 20) {
+            return 20.0;
+        } else {
+            return 0.0;
+        }
+    }
+
+    private void updateHarvestTotalQuantity(Harvest harvest, double additionalQuantity) {
+        double newTotalQuantity = harvest.getTotalQuantity() + additionalQuantity;
+        harvest.setTotalQuantity(newTotalQuantity);
+        harvestRepository.save(harvest);
+    }
+
 }

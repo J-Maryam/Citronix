@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/controllers/web/HarvestDetailsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/HarvestDetailsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/repositories/HarvestDetailsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/HarvestDetailsServiceImpl.java" afterDir="false" />
@@ -49,30 +50,30 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.Citronix [clean].executor": "Run",
-    "Maven.Citronix [compile].executor": "Run",
-    "Maven.Citronix [install].executor": "Run",
-    "Maven.Citronix [package].executor": "Run",
-    "Maven.Citronix [validate].executor": "Run",
-    "Maven.Citronix [verify].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.CitronixApplication .executor": "Run",
-    "git-widget-placeholder": "CIT-67-gestion-des-details-du-recoltes",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marya/IdeaProjects/Citronix/src/UML",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Citronix [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Citronix [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Citronix [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Citronix [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Citronix [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Citronix [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CitronixApplication .executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CIT-67-gestion-des-details-du-recoltes&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marya/IdeaProjects/Citronix/src/UML&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marya\IdeaProjects\Citronix\src\UML" />
@@ -116,6 +117,8 @@
       <updated>1731976661855</updated>
       <workItem from="1731976664798" duration="2851000" />
       <workItem from="1732066365125" duration="9141000" />
+      <workItem from="1732268888999" duration="208000" />
+      <workItem from="1732269108580" duration="7959000" />
     </task>
     <servers />
   </component>
