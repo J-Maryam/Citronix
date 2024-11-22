@@ -5,12 +5,10 @@ import org.springframework.stereotype.Repository;
 import org.youcode.citronix.entities.HarvestDetail;
 import org.youcode.citronix.entities.Tree;
 import org.youcode.citronix.entities.embeddable.HarvestDetailId;
+import org.youcode.citronix.entities.enums.Season;
 
-import java.time.Month;
 
 @Repository
 public interface HarvestDetailsRepository extends JpaRepository<HarvestDetail, HarvestDetailId> {
-    boolean existsByTreeAndHarvestSeason(Tree tree, Month season);
-
-
+    boolean existsByTreeAndHarvest_Season(Tree tree, Season season);
 }
