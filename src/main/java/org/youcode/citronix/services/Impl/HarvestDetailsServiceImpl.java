@@ -36,6 +36,15 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
     }
 
     @Override
+    public HarvestDetailResponseDTO getById(HarvestDetailId id) {
+
+        HarvestDetail existingHarvestDetail = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Harvest detail with Id " + id + " not found"));
+
+        return mapper.toDto(existingHarvestDetail);
+    }
+
+    @Override
     public HarvestDetailResponseDTO create(HarvestDetailRequestDTO requestDto) {
 
         Harvest harvest = harvestRepository.findById(requestDto.harvestId())
@@ -74,15 +83,11 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
 
     @Override
     public void delete(HarvestDetailId id) {
-        HarvestDetail harvestDetail = repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
+        HarvestDetail existingHarvestDetail = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Harvest detail with Id " + id + " not found"));
 
-        Harvest harvest = harvestDetail.getHarvest();
-        double newTotalQuantity = harvest.getTotalQuantity() - harvestDetail.getQuantity();
-        harvest.setTotalQuantity(Math.max(0, newTotalQuantity));
-        harvestRepository.save(harvest);
-
-        repository.delete(harvestDetail);
+        updateHarvestTotalQuantity(existingHarvestDetail.getHarvest(), -existingHarvestDetail.getQuantity());
+        repository.deleteById(id);
     }
 
     private void validateHarvestedQuantity(Tree tree, double harvestedQuantity) {
