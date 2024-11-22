@@ -72,6 +72,19 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
         return mapper.toDto(savedEntity);
     }
 
+    @Override
+    public void delete(HarvestDetailId id) {
+        HarvestDetail harvestDetail = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
+
+        Harvest harvest = harvestDetail.getHarvest();
+        double newTotalQuantity = harvest.getTotalQuantity() - harvestDetail.getQuantity();
+        harvest.setTotalQuantity(Math.max(0, newTotalQuantity));
+        harvestRepository.save(harvest);
+
+        repository.delete(harvestDetail);
+    }
+
     private void validateHarvestedQuantity(Tree tree, double harvestedQuantity) {
         int treeAge = calculateTreeAge(tree);
         double expectedProductivity = calculateExpectedProductivity(treeAge);
