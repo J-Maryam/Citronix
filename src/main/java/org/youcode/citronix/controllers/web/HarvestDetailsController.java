@@ -17,6 +17,13 @@ public class HarvestDetailsController extends GenericControllerImpl<HarvestDetai
         super(service);
     }
 
+    @GetMapping("/{harvestId}/{treeId}")
+    public ResponseEntity<HarvestDetailResponseDTO> getById(@PathVariable("harvestId") Long harvestId, @PathVariable("treeId") Long treeId) {
+        HarvestDetailId id = new HarvestDetailId(treeId, harvestId);
+        HarvestDetailResponseDTO response = service.getById(id);
+        return ResponseEntity.ok(response);
+    }
+
     @PutMapping("/{harvestId}/{treeId}")
     public ResponseEntity<HarvestDetailResponseDTO> update(@PathVariable Long harvestId,
                                                            @PathVariable Long treeId,
