@@ -54,7 +54,7 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
                 .orElseThrow(() -> new EntityNotFoundException("Tree with Id " + requestDto.treeId() + " not found"));
 
         if (!tree.getField().getId().equals(harvest.getField().getId())) {
-            throw new IllegalArgumentException(" Tree does not belong to the same field as the harvest");
+            throw new IllegalArgumentException("Tree does not belong to the same field as the harvest");
         }
 
         boolean alreadyHarvested = harvestDetailsRepository.existsByTreeAndHarvest_Season(
@@ -63,7 +63,7 @@ public class HarvestDetailsServiceImpl extends GenericServiceImpl<HarvestDetail,
         );
 
         if (alreadyHarvested) {
-            throw new IllegalArgumentException(" The tree has already been harvested for this season.");
+            throw new IllegalArgumentException("The tree has already been harvested for this season.");
         }
 
         validateHarvestedQuantity(tree, requestDto.quantity());

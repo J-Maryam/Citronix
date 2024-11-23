@@ -96,18 +96,6 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
         return 0;
     }
 
-    private double calculateProductivity(int age) {
-        if (age < 3) {
-            return 2.5;
-        } else if (age > 3 && age <= 10) {
-            return 12;
-        } else if (age > 10) {
-            return 20;
-        } else {
-            return 0.0;
-        }
-    }
-
     private void validateTreeLifeSpan(int age) {
         if (age > 20) {
             throw new IllegalArgumentException("Tree is too old to be productive (age > 20 years).");
