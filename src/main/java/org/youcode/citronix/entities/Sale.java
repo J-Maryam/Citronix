@@ -38,4 +38,8 @@ public class Sale {
     @ManyToOne
     @JoinColumn(name = "harvest_id", nullable = false)
     private Harvest harvest;
+
+    public double getRevenue() {
+        return quantity * unitPrice;
+    }
 }
