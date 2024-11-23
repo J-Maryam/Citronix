@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FarmServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FarmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/services/Impl/FarmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FarmServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FarmServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.FarmServiceImplTest.executor": "Run",
+    "JUnit.FarmServiceImplTest.testCreateFarmSuccess.executor": "Run",
+    "JUnit.FarmServiceImplTest.testCreateFarmWithEmptyName.executor": "Run",
+    "JUnit.FarmServiceImplTest.testCreateFarmWithInvalidArea.executor": "Run",
+    "JUnit.FarmServiceImplTest.testCreateFarmWithSmallArea.executor": "Run",
+    "JUnit.FarmServiceImplTest.testDeleteFarmNotFound.executor": "Run",
+    "JUnit.FarmServiceImplTest.testDeleteFarmSuccess.executor": "Run",
+    "JUnit.FarmServiceImplTest.testGetFarmNotFound.executor": "Run",
+    "JUnit.FarmServiceImplTest.testGetFarmSuccess.executor": "Run",
+    "JUnit.FarmServiceImplTest.testUpdateFarmNotFound.executor": "Run",
+    "JUnit.FarmServiceImplTest.testUpdateFarmWithEmptyName.executor": "Run",
+    "JUnit.FarmServiceImplTest.testUpdateFarmWithInvalidArea.executor": "Run",
+    "JUnit.FarmServiceImplTest.testUpdateNonExistentFarm.executor": "Run",
     "Maven.Citronix [clean].executor": "Run",
     "Maven.Citronix [compile].executor": "Run",
     "Maven.Citronix [install].executor": "Run",
@@ -97,7 +109,86 @@
       <recent name="org.youcode.citronix.mappers" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FarmServiceImplTest.testDeleteFarmSuccess">
+    <configuration name="FarmServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmServiceImplTest.testCreateFarmWithEmptyName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateFarmWithEmptyName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmServiceImplTest.testCreateFarmWithSmallArea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateFarmWithSmallArea" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmServiceImplTest.testDeleteFarmSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="METHOD_NAME" value="testDeleteFarmSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmServiceImplTest.testUpdateNonExistentFarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="METHOD_NAME" value="testUpdateNonExistentFarm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CitronixApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Citronix" />
@@ -106,6 +197,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FarmServiceImplTest.testDeleteFarmSuccess" />
+        <item itemvalue="JUnit.FarmServiceImplTest.testCreateFarmWithEmptyName" />
+        <item itemvalue="JUnit.FarmServiceImplTest" />
+        <item itemvalue="JUnit.FarmServiceImplTest.testUpdateNonExistentFarm" />
+        <item itemvalue="JUnit.FarmServiceImplTest.testCreateFarmWithSmallArea" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
