@@ -71,4 +71,17 @@ public class SaleServiceImpl extends GenericServiceImpl<Sale, Long, SaleRequestD
         return mapper.toDto(updatedSale);
     }
 
+    @Override
+    public void delete(Long id) {
+        Sale existingSale = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Sale with Id " + id + " not found"));
+
+        Harvest associatedHarvest = existingSale.getHarvest();
+
+        associatedHarvest.setTotalQuantity(associatedHarvest.getTotalQuantity() + existingSale.getQuantity());
+        harvestRepository.save(associatedHarvest);
+
+        repository.delete(existingSale);
+    }
+
 }
