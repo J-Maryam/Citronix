@@ -24,6 +24,6 @@ public record SaleRequestDTO(
 
         @NotNull
         @Exists(entityClass = Harvest.class, message = "Harvest ID does not exist")
-        Long harvest
+        Long harvestId
 ) {
 }
