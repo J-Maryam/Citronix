@@ -40,16 +40,16 @@ public class FarmServiceImpl extends GenericServiceImpl<Farm, Long, FarmRequestD
         Farm existingFerme = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
 
-        if (requestDto.name() != null && !requestDto.name().equals(existingFerme.getName())) {
+        if (requestDto.name() != null) {
             existingFerme.setName(requestDto.name());
         }
-        if (requestDto.location() != null && !requestDto.location().equals(existingFerme.getLocation())) {
+        if (requestDto.location() != null) {
             existingFerme.setLocation(requestDto.location());
         }
-        if (requestDto.area() != 0 && requestDto.area() != existingFerme.getArea()) {
+        if (requestDto.area() != 0) {
             existingFerme.setArea(requestDto.area());
         }
-        if (requestDto.creationDate() != null && !requestDto.creationDate().equals(existingFerme.getCreationDate())) {
+        if (requestDto.creationDate() != null) {
             existingFerme.setCreationDate(requestDto.creationDate());
         }
 

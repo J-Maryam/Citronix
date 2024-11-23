@@ -9,17 +9,17 @@ import org.youcode.citronix.entities.Farm;
 import java.time.LocalDate;
 
 public record FarmRequestDTO(
-        @NotBlank
+        @NotBlank(message = "The farm name must not be empty.")
         String name,
 
-        @NotBlank
+        @NotBlank(message = "The farm location must not be empty.")
         @UniqueValue(entityClass = Farm.class, fieldName = "location", message = "Farm localisation already exists")
         String location,
 
-        @NotNull
+        @NotNull(message = "The farm area must not be null.")
         double area,
 
-        @NotNull
+        @NotNull(message = "The creation date must not be null.")
         @PastOrPresent
         LocalDate creationDate
 
