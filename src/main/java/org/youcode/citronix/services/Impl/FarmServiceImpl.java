@@ -36,9 +36,24 @@ public class FarmServiceImpl extends GenericServiceImpl<Farm, Long, FarmRequestD
     }
 
     @Override
+    public FarmResponseDTO create(FarmRequestDTO requestDto) {
+        if (requestDto.area() < 0.2) {
+            throw new IllegalArgumentException("Farm area must be at least 0.2 hectare.");
+        }
+
+        Farm farm = mapper.toEntity(requestDto);
+        Farm saved = repository.save(farm);
+        return mapper.toDto(saved);
+    }
+
+    @Override
     public FarmResponseDTO update(Long id, FarmRequestDTO requestDto) {
         Farm existingFerme = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Entity with Id " + id + " not found"));
+
+        if (requestDto.area() < 0.2) {
+            throw new IllegalArgumentException("Farm area must be at least 0.2 hectare.");
+        }
 
         if (requestDto.name() != null) {
             existingFerme.setName(requestDto.name());
