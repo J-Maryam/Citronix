@@ -12,14 +12,14 @@ public record HarvestRequestDTO(
 
         Season season,
 
-        @NotNull
-        @PastOrPresent
+        @NotNull(message = "The harvest date must not be null.")
+        @PastOrPresent(message = "The harvest date must be in the past or present.")
         LocalDate harvestDate,
 
-        @NotNull
+        @NotNull(message = "The total quantity must not be null.")
         double totalQuantity,
 
-        @NotNull
+        @NotNull(message = "The field ID must not be null.")
         @Exists(entityClass = Field.class, message = "Field ID does not exist")
         Long fieldId
 ) {

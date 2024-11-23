@@ -10,19 +10,19 @@ import java.time.LocalDate;
 
 public record SaleRequestDTO(
 
-        @PastOrPresent
+        @PastOrPresent(message = "The sale date must be in the past or present.")
         LocalDate saleDate,
 
-        @NotNull
+        @NotNull(message = "The unit price must not be null.")
         double unitPrice,
 
-        @NotNull
+        @NotNull(message = "The quantity must not be null.")
         double quantity,
 
-        @NotBlank
+        @NotBlank(message = "The client must not be empty.")
         String client,
 
-        @NotNull
+        @NotNull(message = "The harvest ID must not be null.")
         @Exists(entityClass = Harvest.class, message = "Harvest ID does not exist")
         Long harvestId
 ) {

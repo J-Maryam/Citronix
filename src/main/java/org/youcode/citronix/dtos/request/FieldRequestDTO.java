@@ -5,10 +5,10 @@ import org.youcode.citronix.common.validation.annotation.Exists;
 import org.youcode.citronix.entities.Farm;
 
 public record FieldRequestDTO(
-        @NotNull
+        @NotNull(message = "The field area must not be null.")
         double area,
 
-        @NotNull
+        @NotNull(message = "The farm ID must not be null.")
         @Exists(entityClass = Farm.class, message = "Farm ID does not exist")
         Long farmId
 ) {
