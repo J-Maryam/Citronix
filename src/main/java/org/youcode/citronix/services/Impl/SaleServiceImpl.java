@@ -43,4 +43,32 @@ public class SaleServiceImpl extends GenericServiceImpl<Sale, Long, SaleRequestD
         Sale saved = repository.save(sale);
         return mapper.toDto(saved);
     }
+
+    @Override
+    public SaleResponseDTO update(Long id, SaleRequestDTO requestDto) {
+        Sale existingSale = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Sale with Id " + id + " not found"));
+
+        Harvest existingHarvest = harvestRepository.findById(requestDto.harvestId())
+                .orElseThrow(() -> new EntityNotFoundException("Harvest with Id " + requestDto.harvestId() + " not found"));
+
+        double availableQuantity = existingHarvest.getTotalQuantity() + existingSale.getQuantity();
+
+        if (requestDto.quantity() > availableQuantity) {
+            throw new IllegalArgumentException("The quantity demanded exceeds the available quantity in the harvest.");
+        }
+
+        existingHarvest.setTotalQuantity(availableQuantity - requestDto.quantity());
+        harvestRepository.save(existingHarvest);
+
+        existingSale.setSaleDate(requestDto.saleDate());
+        existingSale.setUnitPrice(requestDto.unitPrice());
+        existingSale.setQuantity(requestDto.quantity());
+        existingSale.setClient(requestDto.client());
+        existingSale.setHarvest(existingHarvest);
+
+        Sale updatedSale = repository.save(existingSale);
+        return mapper.toDto(updatedSale);
+    }
+
 }
