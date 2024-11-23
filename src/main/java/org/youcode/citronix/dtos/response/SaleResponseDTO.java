@@ -9,6 +9,7 @@ public record SaleResponseDTO(
         LocalDate saleDate,
         double unitPrice,
         double quantity,
+        double revenue,
         String client,
         EmbeddableHarvestResponseDTO harvest
 ) {
