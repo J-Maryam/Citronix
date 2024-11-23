@@ -69,17 +69,20 @@ public class FieldServiceImpl extends GenericServiceImpl<Field, Long, FieldReque
             throw new IllegalArgumentException("A farm cannot have more than 10 fields.");
         }
 
-        double totalFieldArea = farm.getFields().stream()
-                .filter(field -> existingField == null || !field.getId().equals(existingField.getId())) // Exclure le champ actuel s'il existe
-                .mapToDouble(Field::getArea)
-                .sum();
-
+        double totalFieldArea = calculateTotalFieldArea(farm, existingField);
         double adjustedTotalArea = totalFieldArea + newFieldArea;
 
         if (adjustedTotalArea >= farm.getArea()) {
             throw new IllegalArgumentException("The total area of fields exceeds the farm's area. Maximum allowed: "
                     + farm.getArea() + " hectares, current total: " + adjustedTotalArea + " hectares.");
         }
+    }
+
+    private double calculateTotalFieldArea(Farm farm, Field existingField) {
+        return farm.getFields().stream()
+                .filter(field -> existingField == null || !field.getId().equals(existingField.getId()))
+                .mapToDouble(Field::getArea)
+                .sum();
     }
 
 }
