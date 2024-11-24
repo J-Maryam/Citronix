@@ -63,7 +63,7 @@
 ### **UML Class Diagram**
 A comprehensive class diagram is used to visualize the project's architecture, highlighting the relationships between controllers, services, repositories, and entities.
 
-![UML Diagram]()
+![UML Diagram](file:///C:/Users/marya/Downloads/UML%20Classe%20diagram_%20Citronix.png)
 
 ## 🛠️ **Installation Guide**
 To run the project locally, follow these steps:
