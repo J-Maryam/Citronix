@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FieldServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FarmServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FarmServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,15 @@
     "JUnit.FarmServiceImplTest.testUpdateFarmWithEmptyName.executor": "Run",
     "JUnit.FarmServiceImplTest.testUpdateFarmWithInvalidArea.executor": "Run",
     "JUnit.FarmServiceImplTest.testUpdateNonExistentFarm.executor": "Run",
+    "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenAreaExceeds50PercentOfFarm.executor": "Run",
+    "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenAreaIsTooSmall.executor": "Run",
+    "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenFarmNotFound.executor": "Run",
+    "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenMoreThan10Fields.executor": "Run",
+    "JUnit.FieldServiceImplTest.testCreateField_FarmNotFound.executor": "Run",
+    "JUnit.FieldServiceImplTest.testCreateField_Success.executor": "Run",
+    "JUnit.FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound.executor": "Run",
+    "JUnit.FieldServiceImplTest.updateField_ShouldFail_WhenFieldNotFound.executor": "Run",
+    "JUnit.FieldServiceImplTest.updateField_ShouldSucceed_WhenDataIsValid.executor": "Run",
     "Maven.Citronix [clean].executor": "Run",
     "Maven.Citronix [compile].executor": "Run",
     "Maven.Citronix [install].executor": "Run",
@@ -109,8 +118,8 @@
       <recent name="org.youcode.citronix.mappers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FarmServiceImplTest.testDeleteFarmSuccess">
-    <configuration name="FarmServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FieldServiceImplTest">
+    <configuration name="FieldServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
         <pattern>
@@ -119,13 +128,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmServiceImplTest.testCreateFarmWithEmptyName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldServiceImplTest.deleteField_ShouldFail_WhenFieldNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
         <pattern>
@@ -134,14 +143,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
-      <option name="METHOD_NAME" value="testCreateFarmWithEmptyName" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteField_ShouldFail_WhenFieldNotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmServiceImplTest.testCreateFarmWithSmallArea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldServiceImplTest.deleteField_ShouldSucceed_WhenFieldExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
         <pattern>
@@ -150,14 +159,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
-      <option name="METHOD_NAME" value="testCreateFarmWithSmallArea" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteField_ShouldSucceed_WhenFieldExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmServiceImplTest.testDeleteFarmSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
         <pattern>
@@ -166,14 +175,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
-      <option name="METHOD_NAME" value="testDeleteFarmSuccess" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
+      <option name="METHOD_NAME" value="updateField_ShouldFail_WhenFarmNotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmServiceImplTest.testUpdateNonExistentFarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldServiceImplTest.updateField_ShouldSucceed_WhenDataIsValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
         <pattern>
@@ -182,8 +191,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
-      <option name="METHOD_NAME" value="testUpdateNonExistentFarm" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
+      <option name="METHOD_NAME" value="updateField_ShouldSucceed_WhenDataIsValid" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FarmServiceImplTest.testDeleteFarmSuccess" />
-        <item itemvalue="JUnit.FarmServiceImplTest.testCreateFarmWithEmptyName" />
-        <item itemvalue="JUnit.FarmServiceImplTest" />
-        <item itemvalue="JUnit.FarmServiceImplTest.testUpdateNonExistentFarm" />
-        <item itemvalue="JUnit.FarmServiceImplTest.testCreateFarmWithSmallArea" />
+        <item itemvalue="JUnit.FieldServiceImplTest" />
+        <item itemvalue="JUnit.FieldServiceImplTest.deleteField_ShouldFail_WhenFieldNotFound" />
+        <item itemvalue="JUnit.FieldServiceImplTest.deleteField_ShouldSucceed_WhenFieldExists" />
+        <item itemvalue="JUnit.FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound" />
+        <item itemvalue="JUnit.FieldServiceImplTest.updateField_ShouldSucceed_WhenDataIsValid" />
       </list>
     </recent_temporary>
   </component>
