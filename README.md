@@ -63,8 +63,8 @@
 ### **UML Class Diagram**
 A comprehensive class diagram is used to visualize the project's architecture, highlighting the relationships between controllers, services, repositories, and entities.
 
-![UML Diagram]((https://github.com/user-attachments/assets/20058743-f4a8-4982-8f26-415d1e73129a)
-)
+![UML diagram](https://github.com/user-attachments/assets/ceee32d0-9fa0-4f46-9e98-84750b66e511)
+
 
 ## 🛠️ **Installation Guide**
 To run the project locally, follow these steps:
