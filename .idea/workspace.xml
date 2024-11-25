@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FieldServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/youcode/citronix/services/Impl/FieldServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,7 @@
     "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenAreaIsTooSmall.executor": "Run",
     "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenFarmNotFound.executor": "Run",
     "JUnit.FieldServiceImplTest.createField_ShouldFail_WhenMoreThan10Fields.executor": "Run",
+    "JUnit.FieldServiceImplTest.executor": "Run",
     "JUnit.FieldServiceImplTest.testCreateField_FarmNotFound.executor": "Run",
     "JUnit.FieldServiceImplTest.testCreateField_Success.executor": "Run",
     "JUnit.FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound.executor": "Run",
@@ -93,7 +95,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -118,7 +120,22 @@
       <recent name="org.youcode.citronix.mappers" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CitronixApplication ">
+  <component name="RunManager" selected="JUnit.FieldServiceImplTest">
+    <configuration name="FarmServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FarmServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FieldServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Citronix" />
       <extension name="coverage">
@@ -130,6 +147,22 @@
       <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldServiceImplTest.createField_ShouldFail_WhenFarmNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citronix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
+      <option name="METHOD_NAME" value="createField_ShouldFail_WhenFarmNotFound" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,38 +199,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Citronix" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
-      <option name="METHOD_NAME" value="updateField_ShouldFail_WhenFarmNotFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FieldServiceImplTest.updateField_ShouldSucceed_WhenDataIsValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Citronix" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.youcode.citronix.services.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.youcode.citronix.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="org.youcode.citronix.services.Impl.FieldServiceImplTest" />
-      <option name="METHOD_NAME" value="updateField_ShouldSucceed_WhenDataIsValid" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CitronixApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Citronix" />
@@ -209,10 +210,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FieldServiceImplTest" />
+        <item itemvalue="JUnit.FieldServiceImplTest.createField_ShouldFail_WhenFarmNotFound" />
+        <item itemvalue="JUnit.FarmServiceImplTest" />
         <item itemvalue="JUnit.FieldServiceImplTest.deleteField_ShouldFail_WhenFieldNotFound" />
         <item itemvalue="JUnit.FieldServiceImplTest.deleteField_ShouldSucceed_WhenFieldExists" />
-        <item itemvalue="JUnit.FieldServiceImplTest.updateField_ShouldFail_WhenFarmNotFound" />
-        <item itemvalue="JUnit.FieldServiceImplTest.updateField_ShouldSucceed_WhenDataIsValid" />
       </list>
     </recent_temporary>
   </component>
@@ -236,10 +237,26 @@
       <workItem from="1732066365125" duration="9141000" />
       <workItem from="1732268888999" duration="208000" />
       <workItem from="1732269108580" duration="8570000" />
+      <workItem from="1732532726352" duration="4442000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

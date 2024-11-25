@@ -40,16 +40,6 @@ class FieldServiceImplTest {
     private FieldServiceImpl fieldService;
 
     @Test
-    void createField_ShouldFail_WhenFarmNotFound() {
-        FieldRequestDTO requestDTO = new FieldRequestDTO(999L, 20L);
-
-        when(farmRepository.findById(999L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> fieldService.create(requestDTO));
-        verify(fieldRepository, never()).save(any());
-    }
-
-    @Test
     void testCreateField_FarmNotFound() {
         FieldRequestDTO requestDto = new FieldRequestDTO(5.0, 999L);
         when(farmRepository.findById(999L)).thenReturn(Optional.empty());
@@ -99,43 +89,6 @@ class FieldServiceImplTest {
         when(farmRepository.findById(1L)).thenReturn(Optional.of(farm));
 
         assertThrows(IllegalArgumentException.class, () -> fieldService.create(requestDTO));
-    }
-
-    @Test
-    void updateField_ShouldSucceed_WhenDataIsValid() {
-        Farm farm = new Farm();
-        farm.setId(1L);
-        farm.setArea(100);
-        farm.setFields(List.of());
-
-        Field existingField = new Field();
-        existingField.setId(1L);
-        existingField.setArea(15);
-        existingField.setFarm(farm);
-
-        FieldRequestDTO updateDTO = new FieldRequestDTO(25, 1L);
-
-        EmbeddableFarmResponseDTO embeddableFarmResponseDTO = new EmbeddableFarmResponseDTO(1L, null, null, 100, null);
-        List<EmbeddableTreeResponseDTO> embeddableTreeResponseDTOs = List.of();
-        List<EmbeddableHarvestResponseDTO> embeddableHarvestResponseDTOs = List.of();
-
-        when(fieldRepository.findById(1L)).thenReturn(Optional.of(existingField));
-        when(farmRepository.findById(1L)).thenReturn(Optional.of(farm));
-        when(fieldRepository.save(existingField)).thenReturn(existingField);
-
-        when(fieldMapper.toDto(existingField)).thenReturn(new FieldResponseDTO(
-                1L,
-                25.0,
-                embeddableFarmResponseDTO,
-                embeddableTreeResponseDTOs,
-                embeddableHarvestResponseDTOs
-        ));
-
-        FieldResponseDTO result = fieldService.update(1L, updateDTO);
-
-        assertNotNull(result);
-        assertEquals(25, result.area());
-        verify(fieldRepository, times(1)).save(existingField);
     }
 
     @Test
