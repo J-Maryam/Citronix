@@ -1,7 +1,7 @@
 package org.youcode.citronix.mappers;
 
 import org.mapstruct.Mapper;
-import org.youcode.citronix.common.GenericMapper;
+import org.youcode.citronix.common.Mapper.GenericMapper;
 import org.youcode.citronix.dtos.request.HarvestRequestDTO;
 import org.youcode.citronix.dtos.response.HarvestResponseDTO;
 import org.youcode.citronix.entities.Harvest;

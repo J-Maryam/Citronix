@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
-import org.youcode.citronix.common.GenericMapper;
+import org.youcode.citronix.common.Mapper.GenericMapper;
 import org.youcode.citronix.common.PagedResponse;
 import org.youcode.citronix.common.exceptions.EntityNotFoundException;
 

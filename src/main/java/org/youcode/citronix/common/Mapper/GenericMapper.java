@@ -1,4 +1,4 @@
-package org.youcode.citronix.common;
+package org.youcode.citronix.common.Mapper;
 
 import org.mapstruct.MapperConfig;
 

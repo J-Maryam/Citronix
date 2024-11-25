@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36cd3df2-bb0a-4bfb-b238-96287151b5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/GenericMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/Mapper/GenericMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/services/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/common/services/GenericServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FarmMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FarmMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FieldMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/FieldMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/HarvestDetailsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/HarvestDetailsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/HarvestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/HarvestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/SaleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/SaleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/TreeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/youcode/citronix/mappers/TreeMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

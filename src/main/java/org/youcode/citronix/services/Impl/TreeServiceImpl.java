@@ -37,6 +37,7 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
 
         validateDensity(field);
         validatePlantingPeriod(requestDto.plantingDate());
+        validatePlantingDateAgainstFarmCreationDate(requestDto.plantingDate(), field);
 
         Tree tree = mapper.toEntity(requestDto);
         tree.setField(field);
@@ -59,6 +60,7 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
 
         validateDensity(field);
         validatePlantingPeriod(requestDto.plantingDate());
+        validatePlantingDateAgainstFarmCreationDate(requestDto.plantingDate(), field);
 
         existingTree.setPlantingDate(requestDto.plantingDate());
         existingTree.setField(field);
@@ -101,4 +103,12 @@ public class TreeServiceImpl extends GenericServiceImpl<Tree, Long, TreeRequestD
             throw new IllegalArgumentException("Tree is too old to be productive (age > 20 years).");
         }
     }
+
+    private void validatePlantingDateAgainstFarmCreationDate(LocalDate plantingDate, Field field) {
+        LocalDate farmCreationDate = field.getFarm().getCreationDate();
+        if (plantingDate.isBefore(farmCreationDate)) {
+            throw new IllegalArgumentException("The planting date cannot be earlier than the farm's creation date.");
+        }
+    }
+
 }
