@@ -4,9 +4,11 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.youcode.citronix.common.exceptions.EntityNotFoundException;
 import org.youcode.citronix.dtos.embeddableResponseDTO.EmbeddableFarmResponseDTO;
 import org.youcode.citronix.dtos.embeddableResponseDTO.EmbeddableHarvestResponseDTO;
@@ -19,10 +21,10 @@ import org.youcode.citronix.mappers.FieldMapper;
 import org.youcode.citronix.repositories.FarmRepository;
 import org.youcode.citronix.repositories.FieldRepository;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@ExtendWith(MockitoExtension.class)
 class FieldServiceImplTest {
 
     @Mock
@@ -36,11 +38,6 @@ class FieldServiceImplTest {
 
     @InjectMocks
     private FieldServiceImpl fieldService;
-
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
 
     @Test
     void createField_ShouldFail_WhenFarmNotFound() {
